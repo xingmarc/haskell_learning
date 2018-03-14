@@ -18,4 +18,6 @@ toString t =
   unlines (map (\s -> (unwords (map show s))) t)
 
 main = do
-  print $ toString $ pascalTriangle 5
+  raw <- getContents
+  let n = read (head (lines raw)) :: Int
+  putStr $ toString $ pascalTriangle n
